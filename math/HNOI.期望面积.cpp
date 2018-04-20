@@ -77,7 +77,7 @@ int main()
 
     Ex /= 2; //叉乘的值为面积的两倍,所以除以2
     if(Ex < 0) Ex = -Ex;
-    printf("%.6lf\n", Ex/2);
+    printf("%.6lf\n", Ex);
 
     return 0;
 }
