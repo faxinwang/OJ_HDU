@@ -71,7 +71,7 @@ bool dfs(int k, int curLen, int cnt)
             if( dfs(i+1, curLen + a[i], cnt) ) return true;
             vis[i] = 0; //不选择第 i 根木棒
             if(curLen == 0) return false; //curLen为 0 表示第 i 根木棒无法跟任何其他的木棒组合出长度L (优化二)
-            // while(i+1<n && a[i] == a[i+1]) ++i;  //需要排序  (优化三, 不用也可以通过)
+            while(i+1<n && a[i] == a[i+1]) ++i;  //需要排序  (优化三, 不用也可以通过)
         }
     }
     return false;
@@ -95,7 +95,7 @@ int main()
             maxLen = max(maxLen, a[i]);
         }
 
-        // sort(a, a+n, greater<int>()); 
+        sort(a, a+n, greater<int>()); 
         // sort(a,a+n);
 
         // for(int Len = a[n-1]; Len<=sumLen; ++Len)
